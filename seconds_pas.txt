@@ -1,0 +1,18 @@
+forEach :
+
+for (int element : tab) {
+    system.out.println(element);
+}
+
+int a = 0;
+int b = a++;    b=0 et a=1
+(post-incrémentation, b prend d'abord la valeur de a, puis on fait a++)
+
+int c = --b;    c=-1 et b=-1
+(pré-decrémentation, b-- d'abord puis c prend la valeur de b)
+
+Les méthodes doivent renvoyer un nouvel élément et ne pas modifier l'élement de base.
+Dans une méthode on ne s'attend pas à modifier les attributs (sauf dans un set).
+
+donnée: 45, info: pointure de chaussure
+L'information qualifie une donnée

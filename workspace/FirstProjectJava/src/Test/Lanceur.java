@@ -12,7 +12,7 @@ public class Lanceur {
 		
 		francis.marcher();
 		
-		System.out.println(francis.getNom() + " " + francis.getAge() + " cpt : " + francis.cpt);
+		// System.out.println(francis.getNom() + " " + francis.getAge() + " cpt : " + francis.cpt);
 		
 		francis.setAge(-6);
 		
@@ -26,10 +26,12 @@ public class Lanceur {
 		
 		Personne autrePersonne = new Personne("Jacquie", 67, 67);
 		
-		System.out.println("cpt Francis : " + francis.cpt + " cpt Jacquie : " + autrePersonne.cpt);
+		// System.out.println("cpt Francis : " + francis.cpt + " cpt Jacquie : " + autrePersonne.cpt);
 		// cpt attribut de classe donc appeler la classe et non l'instance
 		
-		System.out.println("cpt Francis : " + Personne.cpt + " cpt Jacquie : " + Personne.cpt);
+		System.out.println("cpt Francis : " + Personne.getCpt() + " cpt Jacquie : " + Personne.getCpt());
+		
+		System.out.println("cpt Francis : " + francis.getId() + " cpt Jacquie : " + autrePersonne.getId());
 	}
 
 }

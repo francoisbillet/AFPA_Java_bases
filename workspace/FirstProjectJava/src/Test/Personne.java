@@ -4,22 +4,26 @@ public class Personne {
 
 	// ATTRIBUTS DE CLASSE
 	public static final float PI = 3.14f;
-	public static int cpt = 0;
+	private static int cpt = 0;
 	
 	// ATTRIBUTS D'INSTANCES
 	private String nom;
 	private int age;
+	private int id;
 	
+	
+
 	public final int AGERETRAITE;
 	
 	// CONSTRUCTEUR
 	public Personne(String nom, int age, int ageRetraite) {
 		// super();
+		this.id = cpt++;
 		this.nom = nom;
 		this.age = age;
 		this.AGERETRAITE = ageRetraite;
 		
-		cpt++;
+		// cpt++;
 	}
 
 	// METHODES
@@ -27,7 +31,15 @@ public class Personne {
 		System.out.println("Je marche");
 	}
 	
+	public int getId() {
+		return id;
+	}
 	
+	
+	public static int getCpt() {
+		return cpt;
+	}
+
 	public String getNom() {
 		return nom;
 	}
