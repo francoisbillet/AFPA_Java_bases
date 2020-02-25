@@ -1,0 +1,37 @@
+Pour compiler à la main :
+
+javac nom_fichier.java (comme avec scala)
+
+string n'est pas un type élémentaire (ou primitif)
+syso + CTRL + SPACE pour system.out.println
+
+static: 
+
+pas besoin d'instancier un objet de la classe pour pouvoir l'utiliser. 
+Seulement sur les méthodes et attributs.
+
+modificateurs d'accès: 
+
+public -> tout le monde peut y accéder, depuis un autre fichier java
+private -> visible que dans la classe
+protected -> visible des héritiers et de ceux qui sont dans le même package
+friendly (pas de mot-clé) -> visible du package mais pas forcément des héritiers (rare)
+Seulement sur les méthodes et attributs.
+
+package: dossier
+
+Les attributs ne seront jamais public ni package-friendly !
+
+String est une classe, c'est pour cela que l'on peut utiliser des méthodes dessus.
+
+bin ou pojo (Play All Java Object): interdire l'accès aux attributs
+
+Encapsulation: je crée des boites et je définis comment je les utilise et j'y accède
+
+final: constante
+Si final, pas besoin de le mettre en private puisqu'on ne peut pas le modifier.
+
+Première préoccupation du développeur : sécurité (ex: empêcher les injections SQL)
+
+CSRF (Cross Side Request Forgery) en front permet de mettre un token caché sur la page et d'identifier d'où vient la demande
+On fait appel à des frameworks qui implémentent le CSRF pour éviter d'avoir à le développer à chaque appli

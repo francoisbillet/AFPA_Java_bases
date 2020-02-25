@@ -1,0 +1,21 @@
+package Test;
+
+public class Personne {
+
+	// ATTRIBUTS
+	public String nom;
+	public int age;
+	
+	// CONSTRUCTEUR
+	public Personne(String nom, int age) {
+		super();
+		this.nom = nom;
+		this.age = age;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

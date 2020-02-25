@@ -1,0 +1,16 @@
+
+
+public class bonjour {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Bonjour");
+		System.out.println(HelloWorld.min(9, 1));
+		
+		System.out.println(HelloWorld.min(HelloWorld.un, 2));
+		System.out.println(HelloWorld.min(HelloWorld.un, HelloWorld.trois));
+		System.out.println(HelloWorld.min(HelloWorld.quatre, HelloWorld.trois));
+	}
+
+}

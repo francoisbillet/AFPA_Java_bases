@@ -1,0 +1,38 @@
+package Test;
+
+public class Personne {
+
+	// ATTRIBUTS
+	private String nom;
+	private int age;
+	
+	// CONSTRUCTEUR
+	public Personne(String nom, int age) {
+		super();
+		this.nom = nom;
+		this.age = age;
+	}
+
+	// METHODES
+	public void marcher() {
+		System.out.println("Je marche");
+	}
+	
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+}

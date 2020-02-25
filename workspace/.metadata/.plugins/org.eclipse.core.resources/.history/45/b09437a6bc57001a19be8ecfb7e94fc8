@@ -1,0 +1,48 @@
+package Test;
+
+public class Personne {
+
+	// ATTRIBUTS DE CLASSE
+	public static final float PI = 3.14f;
+	
+	// ATTRIBUTS D'INSTANCES
+	private String nom;
+	private int age;
+	private int ageRetraite;
+	
+	// CONSTRUCTEUR
+	public Personne(String nom, int age, int ageRetraite) {
+		// super();
+		this.nom = nom;
+		this.age = age;
+		this.ageRetraite = ageRetraite;
+	}
+
+	// METHODES
+	public void marcher() {
+		System.out.println("Je marche");
+	}
+	
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		if (age > 0) {
+			this.age = age;
+		}
+		else {
+			System.out.println("Je n'ai pas modifié l'âge car il était négatif");
+		}
+	}
+
+}
