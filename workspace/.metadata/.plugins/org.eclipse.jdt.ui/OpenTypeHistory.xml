@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=Shapes/src&lt;{Rectangle.java[Rectangle" modifiers="1" timestamp="1582707169837"/>
+    <typeInfo handle="=Shapes/src&lt;{Drawable.java[Drawable" modifiers="513" timestamp="1582705453100"/>
+    <typeInfo handle="=Shapes/src&lt;{Shape.java[Shape" modifiers="1025" timestamp="1582709365703"/>
+</typeInfoHistroy>

@@ -33,3 +33,7 @@ Méthodes abstraites : non implémentées
 Si on ne définit pas de constructeur dans une classe qui hérite d'une autre, Java définit un constructeur par défaut sans paramètre.
 
 En Java on se demande très souvent si on peut grouper le comportement 
+
+Travailler au forfait (obligation de résultat) vs Régie/Assistance Technique (obligation de moyen).
+
+Plutot définir en attribut ou dans le constructeur ?
