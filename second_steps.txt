@@ -14,5 +14,7 @@ int c = --b;    c=-1 et b=-1
 Les méthodes doivent renvoyer un nouvel élément et ne pas modifier l'élement de base.
 Dans une méthode on ne s'attend pas à modifier les attributs (sauf dans un set).
 
+Si on modifie la source (le tableau de base), la méthode sort() renvoie un void et on utilise un getter pour récupérer le tableau trié.
+
 donnée: 45, info: pointure de chaussure
 L'information qualifie une donnée

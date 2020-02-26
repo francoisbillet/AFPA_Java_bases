@@ -1,0 +1,35 @@
+Polymorphisme (2 types : signature, héritage/surcharge):
+
+Polymorphisme de signature :
+Même nom, même type, mais paramètres différents.
+ex avec les 2 constructeurs Cercle (un prenant le paramètre rayon)
+
+On utilise super seulement dans le constructeur.
+Quand j'étends ma classe les méthodes de la classe mère deviennent aussi les miennes.
+
+Polymorphisme d'héritage / Surcharger: 
+écrire par dessus/remplacer une méthode qui existe dans la classe mère.
+ex avec dessiner dans la classe Square.
+
+Il n'y a pas d'héritage multiple, on ne peut extend qu'une seule classe (contrairement au C++).
+
+Rectangle test = new Carre(3);
+test.draw(); écrira "Je suis un carré" et pas un rectangle car c'est l'instanciation qui prend le dessus.
+
+Interface : 
+
+classe totalement abstraite.
+Permet de forcer le comportement et avoir le même nom pour tous.
+Une interface est aussi un type de données.
+On peut implémenter autant d'interfaces que je veux.
+
+Classe abstraite :
+
+Classe mère qu'on ne peut pas instancier.
+classe partiellement abstraite.
+On force les héritiers à avoir ces méthodes.
+Méthodes abstraites : non implémentées
+
+Si on ne définit pas de constructeur dans une classe qui hérite d'une autre, Java définit un constructeur par défaut sans paramètre.
+
+En Java on se demande très souvent si on peut grouper le comportement 
