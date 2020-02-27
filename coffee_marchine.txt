@@ -1,0 +1,10 @@
+idée d'un menu: quelque chose qui s'affiche, qui a un titre et une liste avec des numéros associés
+
+Dans une classe utilitaire comme SaisieClavier, on n'a pas besoin de déclarer de constructeur et 
+donc d'instancier la classe.
+
+La difficulté est dans la conception.
+
+Le nom des packages est en minuscules.
+
+Buffer = espace tampon

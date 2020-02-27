@@ -6,10 +6,16 @@ import java.util.Arrays;
 public class CoffeeMachine extends MoneyManager {
 	
 	private myScanner mySc;
+	protected int[][] machineCoins;
+	protected int[] coinsEntered;
+	protected int[][] machineDrinks;
 	
 	public CoffeeMachine() {
 		super();
 		this.mySc = new myScanner();
+		this.machineCoins = new int[][] {{10,5},{20,5},{50,5},{100,5},{200,5}};
+		this.coinsEntered = new int[] {0,0,0,0,0};
+		this.machineDrinks = new int[][] {{0,2},{1,2}};
 	}
 	
 	public void sayHello() {
@@ -36,26 +42,7 @@ public class CoffeeMachine extends MoneyManager {
 	
 	// Cette méthode modifie le tableau coinsEntered
 	public void modifyCoinsEntered() {
-		boolean end = false;
-		do {
-			System.out.println("Votre choix : ");
-			int choice = this.mySc.getInput();
-			//int choice = Integer.parseInt(input);
-			if (choice < -1 || choice > this.coinsEntered.length - 1) {
-				System.out.println("Veuillez rentrer un nombre compris entre -1 et " + (this.coinsEntered.length-1));
-			}
-			else {
-				if (choice == -1) {
-					end = true;
-				}
-				else {
-					this.coinsEntered[choice] += 1;
-				}
-			}
-			
-		}
-		while (!end);
-		System.out.println("");
+		this.coinsEntered = mySc.getCoinsEntered();
 	}
 	
 	public int calculateSumCoins(int[] coins) {
@@ -84,10 +71,48 @@ public class CoffeeMachine extends MoneyManager {
 		return coinsEntered >= (Drink.values()[drink_index].getPrice());
 	}
 	
+	public void modifyMachineCoins(int change, char op) {
+		for (int i=this.machineCoins.length - 1; i>=0; i--) {
+			if (change/this.machineCoins[i][0] > 0) {
+				if (op == '+') {
+					this.machineCoins[i][1] += change/this.machineCoins[i][0];
+				}
+				else if (op == '-') {
+					// Si il n'y a pas assez de pièces dans la machine
+					if (this.machineCoins[i][1] - change/this.machineCoins[i][0] < 0) {
+						System.out.println("Je suis désolé mais je n'ai pas assez de monnaie pour vous...");
+					}
+					else {
+						this.machineCoins[i][1] -= change/this.machineCoins[i][0];
+					}
+				}
+				change = change%this.machineCoins[i][0];
+			}
+			//System.out.println(change);
+		}
+
+		for (int j=0; j<this.machineCoins.length; j++) {
+				//System.out.println(this.machineCoins[j][0] + " " + this.machineCoins[j][1]);
+		}
+	}
+	
+	public boolean hasEnoughDrinks(int drinkChosen) {
+		return this.machineDrinks[drinkChosen][1] > 0;
+	}
+	
+	public void modifyMachineDrinks(int drinkChosen) {
+		this.machineDrinks[drinkChosen][1] -= 1;
+		System.out.println(this.machineDrinks[drinkChosen][1]);
+	}
+	
 	public void giveDrink(int drink_index) {
 		System.out.println("");
 		System.out.println("Voilà votre " + (Drink.values()[drink_index].getName()) + " !");
 		// On enlève une boisson correspondante du stock
+	}
+	
+	public void sayNotEnoughDrinks() {
+		System.out.println("Je suis désolé mais je n'ai plus assez de cette boisson..." + "\n");
 	}
 	
 	public int calculateChange(int drink_index, int coinsEntered) {
@@ -97,25 +122,6 @@ public class CoffeeMachine extends MoneyManager {
 	
 	public void giveChange(int change) {
 		System.out.println("Je vous rends " + change/100 + " € et " + change%100 + " centimes" + "\n");
-	}
- 
-	public void modifyMachineCoins(int change, char op) {
-		for (int i=this.machineCoins.length - 1; i>=0; i--) {
-			if (change/this.machineCoins[i][0] > 0) {
-				if (op == '+') {
-					this.machineCoins[i][1] += change/this.machineCoins[i][0];
-				}
-				else if (op == '-') {
-					this.machineCoins[i][1] -= change/this.machineCoins[i][0];
-				}
-				change = change%this.machineCoins[i][0];
-			}
-			//System.out.println(change);
-		}
-
-		for (int j=0; j<this.machineCoins.length; j++) {
-				System.out.println(this.machineCoins[j][0] + " " + this.machineCoins[j][1]);
-		}
 	}
 	
 	public void emptyArrayCoinsEntered() {
@@ -133,6 +139,11 @@ public class CoffeeMachine extends MoneyManager {
 	}
 	
 	public int buyAnotherDrink() {
+		int input;
+		do {
+			input = this.mySc.getInput();
+		}
+		while (input == 99 || input < 0 || input > 1);
 		return this.mySc.getInput();
 	}
 	

@@ -35,15 +35,31 @@ public class Main {
 			// Si on a donné assez d'argent pour la boisson sélectionnée, on donne la boisson, on rend la monnaie et on met à jour le stock de pièces
 			if (myCoffeeMachine.enoughMoneyGiven(drinkChosen, coinsEntered)) {
 				myCoffeeMachine.modifyMachineCoins(coinsEntered, '+');
-				myCoffeeMachine.giveDrink(drinkChosen);
 				
-				// On calcule la monnaie que l'on doit rendre à l'utilisateur et on la lui rend
-				int change = myCoffeeMachine.calculateChange(drinkChosen, coinsEntered);
-				myCoffeeMachine.giveChange(change);
+				int change;
+				// Si on a assez de boissons dans la machine pour en donner une à l'utilisateur
+				if (myCoffeeMachine.hasEnoughDrinks(drinkChosen)) {
+					
+					// On lui donne et on met à jour le stock de boissons de la machine
+					myCoffeeMachine.giveDrink(drinkChosen);
+					myCoffeeMachine.modifyMachineDrinks(drinkChosen);
+					
+					// On calcule la monnaie que l'on doit rendre à l'utilisateur et on la lui rend
+					change = myCoffeeMachine.calculateChange(drinkChosen, coinsEntered);
+					myCoffeeMachine.giveChange(change);
+				}
+				else {
+					myCoffeeMachine.sayNotEnoughDrinks();
+					change = coinsEntered;
+					
+					// Sinon on lui rend ses pièces
+					myCoffeeMachine.giveChange(change);
+				}
 				
 				// On modifie le stock de pièces de la machine
 				myCoffeeMachine.modifyMachineCoins(change, '-');
 				
+				// Et on réinitialise le stock de pièces donné par l'utilisateur
 				myCoffeeMachine.emptyArrayCoinsEntered();
 			}
 			
