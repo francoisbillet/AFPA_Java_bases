@@ -13,7 +13,7 @@ public class CoffeeMachine extends MoneyManager {
 	public CoffeeMachine() {
 		super();
 		this.mySc = new myScanner();
-		this.machineCoins = new int[][] {{10,5},{20,5},{50,5},{100,5},{200,5}};
+		this.machineCoins = new int[][] {{10,0},{20,5},{50,5},{100,5},{200,5}};
 		this.coinsEntered = new int[] {0,0,0,0,0};
 		this.machineDrinks = new int[][] {{0,2},{1,2}};
 	}
@@ -64,13 +64,14 @@ public class CoffeeMachine extends MoneyManager {
 	}
 	
 	public int getChosenDrink() {
-		return this.mySc.getInput();
+		return mySc.getChosenDrink();
 	}
 	
 	public boolean enoughMoneyGiven(int drink_index, int coinsEntered) {
 		return coinsEntered >= (Drink.values()[drink_index].getPrice());
 	}
 	
+	// TODO problème monnaie
 	public void modifyMachineCoins(int change, char op) {
 		for (int i=this.machineCoins.length - 1; i>=0; i--) {
 			if (change/this.machineCoins[i][0] > 0) {
@@ -139,12 +140,7 @@ public class CoffeeMachine extends MoneyManager {
 	}
 	
 	public int buyAnotherDrink() {
-		int input;
-		do {
-			input = this.mySc.getInput();
-		}
-		while (input == 99 || input < 0 || input > 1);
-		return this.mySc.getInput();
+		return mySc.getChosenDrink();
 	}
 	
 	public void sayGoodbye() {

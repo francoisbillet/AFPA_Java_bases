@@ -11,6 +11,7 @@ public class myScanner {
 	public int getInput() {
 		String input;
 		input = this.sc.nextLine();
+		//System.out.println(input);
 		try {
 			return Integer.parseInt(input);
 		}
@@ -51,6 +52,31 @@ public class myScanner {
 		System.out.println("");
 		
 		return coinsEntered;
+	}
+	
+	public int getChosenDrink() {
+		boolean end = false;
+		int choice = 0;
+		do {
+			System.out.println("Votre choix : (-1 pour sortir) ");
+			choice = getInput();
+			
+			if (choice < -1 || choice > 1) {
+				if (choice == 99) {
+					System.out.println("Veuillez rentrer un entier" + "\n");
+				}
+				else {
+					System.out.println("Veuillez rentrer un nombre compris entre -1 et 1" + "\n");
+				}
+			}
+			else {
+				end = true;
+			}
+				
+		}
+		while (!end);
+		
+		return choice;
 	}
 	
 }

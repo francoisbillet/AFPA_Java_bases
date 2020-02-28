@@ -8,3 +8,23 @@ La difficulté est dans la conception.
 Le nom des packages est en minuscules.
 
 Buffer = espace tampon
+
+Collections (tableaux extensibles) :
+
+4 grands types : List, Set, Map, Queue
+
+ArrayList : ordonné, accès direct (avec numéros), droit aux doublons 
+LinkedList : liste chaînée (simple: je connais mon précédent / double: je connais précédent et suivant)
+(implémentent l'interface List)
+
+HashSet : ensemble non ordonné, sans accès direct et sans doublons
+TreeSet : Hashset mais ordonné
+
+HashMap : non ordonné, accès direct, pas de doublons et clé/valeur
+
+Il est pas possible d'avoir une collection de type primitif !!
+Il faut utiliser le wrapper correspondant (Integer, Double, Character, Long, Byte, ...)
+
+On développe des interfaces donc on dit 
+private List<Boisson> truc = new ArrayList<Boisson>() ou
+private Map<Integer, Boisson> boissons = new HashMap<Integer, Boisson>();

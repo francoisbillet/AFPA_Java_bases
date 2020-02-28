@@ -13,6 +13,9 @@
     <fullyQualifiedTypeName name="CoffeeMachine"/>
     <fullyQualifiedTypeName name="myScanner"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="DistributeurBoissons"/>
+    <fullyQualifiedTypeName name="StockBoissons"/>
 </qualifiedTypeNameHistroy>

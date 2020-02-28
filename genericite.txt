@@ -1,0 +1,19 @@
+Généricité en Java :
+
+Stockable classe abstraite car méthodes concrètes.
+
+Pas d'attributs dans une interface !
+
+Cast avec des parenthèses : ((Produit) maBoisson)
+
+On ne met pas des getters par défaut pour les attributs, on en met seulement pour ce dont on a besoin.
+
+Encapsulation : boites noires
+Polymorphisme : multi-constructeurs
+
+Paradigme: manière d'appréhender un problème.
+
+Javadoc commentaires /**
+
+On ne peut pas faire de MVC sur le distributeur de boissons car on est en prog séquentielle, pas en évènementielle.
+
