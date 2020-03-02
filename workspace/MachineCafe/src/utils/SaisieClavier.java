@@ -17,9 +17,6 @@ public class SaisieClavier {
 		
 		saisie = scan.nextInt(); // à ce niveau je prend la saisie valide
 		
-			//System.out.println(inviteSaisie);
-			//saisie = scan.nextInt();
-		
 		return saisie;
 	}
 

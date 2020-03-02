@@ -42,7 +42,7 @@ public abstract class Stockable {
 		this.nom = nom;
 	}
 
-	public float getValeur() {
+	public int getValeur() {
 		return valeur;
 	}
 

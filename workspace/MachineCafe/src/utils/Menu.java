@@ -1,4 +1,5 @@
 package utils;
+
 public class Menu {
 	
 	//ATTRIBUTS
@@ -26,7 +27,8 @@ public class Menu {
 	// AUTRES METHODES
 	public void afficherMenu() {
 		System.out.println(this.titre);
-		for (int indice = 0 ; indice< this.choix.length ; indice++) {
+		//System.out.println(this.getChoix().length);
+		for (int indice = 0 ; indice < this.choix.length ; indice++) {
 			System.out.println(indice +" - "+ this.choix[indice]);
 		}
 		System.out.println("99 -  Quitter");
@@ -34,6 +36,7 @@ public class Menu {
 	
 	public int lireChoixMenu() {
 		//afficherMenu();
+		System.out.println("");
 		return SaisieClavier.lireEntier("Veuillez taper votre choix :");
 		
 	}

@@ -1,5 +1,7 @@
 Généricité en Java :
 
+Généricité : capacité de décrire une classe indépendamment du type qui sera fixé à l'instanciation
+
 Stockable classe abstraite car méthodes concrètes.
 
 Pas d'attributs dans une interface !
@@ -17,3 +19,4 @@ Javadoc commentaires /**
 
 On ne peut pas faire de MVC sur le distributeur de boissons car on est en prog séquentielle, pas en évènementielle.
 
+Maven : pom.xml dans lequel on a les dépendances (extérieures)

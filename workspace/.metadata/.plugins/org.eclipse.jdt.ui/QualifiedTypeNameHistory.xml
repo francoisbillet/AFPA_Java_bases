@@ -14,8 +14,12 @@
     <fullyQualifiedTypeName name="myScanner"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="DistributeurBoissons"/>
     <fullyQualifiedTypeName name="StockBoissons"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="Stockeur"/>
+    <fullyQualifiedTypeName name="StockPieces"/>
 </qualifiedTypeNameHistroy>

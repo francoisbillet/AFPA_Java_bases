@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 // GENERICITE
 public class Stockeur<T extends Stockable> {
 
-	private Map<Integer, T> stock = new HashMap<Integer, T>();
+	protected Map<Integer, T> stock = new HashMap<Integer, T>();
 	
 	public void addItem(T item) {
 		stock.put(item.getId(), item);
